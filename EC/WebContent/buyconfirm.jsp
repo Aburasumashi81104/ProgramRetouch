@@ -2,6 +2,7 @@
 <%@ page import="beans.ItemDataBeans"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="beans.BuyDataBeans"%>
+<%@ page import="beans.DeliveryMethodDataBeans"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,16 +49,17 @@
 										}
 									%>
 									<tr>
-
 										<td class="center"><%=bdb.getDeliveryMethodName()%></td>
-										<td class="center"></td>
+										<td class="center"><%=bdb.getDeliveryMethodPrice()%>円</td>
 										<td class="center"><%=bdb.getDeliveryMethodPrice()%>円</td>
 									</tr>
+
 									<tr>
 										<td class="center"></td>
 										<td class="center">合計</td>
 										<td class="center"><%=bdb.getTotalPrice()%>円</td>
 									</tr>
+
 								</tbody>
 							</table>
 						</div>

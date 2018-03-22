@@ -158,8 +158,8 @@ public class ItemDAO {
 		PreparedStatement st = null;
 		try {
 			con = DBManager.getConnection();
-			st = con.prepareStatement("select count(*) as cnt from m_item where name like ?");
-			st.setString(1, "%" + searchWord + "%");
+			st = con.prepareStatement("SELECT count(*) as cnt FROM m_item WHERE name LIKE ?");
+			st.setString(1, "'%" + searchWord + "%'");
 			ResultSet rs = st.executeQuery();
 			double coung = 0.0;
 			while (rs.next()) {
