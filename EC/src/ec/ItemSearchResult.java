@@ -49,7 +49,7 @@ public class ItemSearchResult extends HttpServlet {
 			// 表示ページ
 			request.setAttribute("pageNum", pageNum);
 			request.setAttribute("itemList", searchResultItemList);
-
+			//itemsearchresult.jspにフォワード
 			request.getRequestDispatcher(EcHelper.SEARCH_RESULT_PAGE).forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

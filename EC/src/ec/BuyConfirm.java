@@ -36,15 +36,19 @@ public class BuyConfirm extends HttpServlet {
 			//合計金額
 			int totalPrice = EcHelper.getTotalItemPrice(cartIDBList);
 
+
 			BuyDataBeans bdb = new BuyDataBeans();
+			bdb.setDeliveryMethodName(userSelectDMB.getName());
+			bdb.setDeliveryMethodPrice(userSelectDMB.getPrice());
 			bdb.setUserId((int) session.getAttribute("userId"));
-			bdb.setTotalPrice(totalPrice);
+			bdb.setTotalPrice(totalPrice+userSelectDMB.getPrice());
 			bdb.setDelivertMethodId(userSelectDMB.getId());
 
 
 
 			//購入確定で利用
 			session.setAttribute("bdb", bdb);
+			//buyconfirm.jspにフォワード
 			request.getRequestDispatcher(EcHelper.BUY_CONFIRM_PAGE).forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

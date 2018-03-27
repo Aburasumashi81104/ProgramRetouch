@@ -31,12 +31,14 @@ public class Item extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("item_id"));
 			//戻るページ表示用
 			int pageNum = Integer.parseInt(request.getParameter("page_num")==null?"1":request.getParameter("page_num"));
+			ItemDAO.getInstance();
 			//対象のアイテム情報を取得
-			ItemDataBeans item = ItemDAO.getInstance().getItemByItemID(id);
+			ItemDataBeans item = ItemDAO.getItemByItemID(id);
 			//リクエストパラメーターにセット
 			request.setAttribute("item", item);
 			request.setAttribute("pageNum", pageNum);
 
+			//item.jspにフォワード
 			request.getRequestDispatcher(EcHelper.ITEM_PAGE).forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
