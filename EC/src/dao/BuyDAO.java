@@ -102,7 +102,7 @@ public class BuyDAO {
 
 	/**
 	 * ユーザーIDによる購入情報検索
-	 * @param userId
+	 * @param UserId
 	 * @return BuyDataBeans
 	 * 				購入情報のデータを持つJavaBeansのリスト
 	 * @throws SQLException

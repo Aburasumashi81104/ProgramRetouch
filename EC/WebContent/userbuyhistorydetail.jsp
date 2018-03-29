@@ -1,10 +1,18 @@
 <%@	page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@	page import="beans.ItemDataBeans"%>
+<%@ page import="beans.DeliveryMethodDataBeans"%>
+<%@ page import="beans.BuyDataBeans"%>
+<%@	page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>購入履歴詳細</title>
 <jsp:include page="/baselayout/head.html" />
+<%
+	ArrayList<ItemDataBeans> buyIDBList = (ArrayList<ItemDataBeans>) request.getAttribute("buyIDBList");
+	BuyDataBeans resultBDB = (BuyDataBeans) request.getAttribute("resultBDB");
+%>
 </head>
 <body>
 	<jsp:include page="/baselayout/header.jsp" />
