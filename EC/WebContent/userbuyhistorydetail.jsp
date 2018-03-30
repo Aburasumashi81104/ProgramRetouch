@@ -37,9 +37,9 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td class="center">1234年56月78日90時12分</td>
-									<td class="center">サンプル</td>
-									<td class="center">123456789円</td>
+									<td class="center"><%=resultBDB.getFormatDate()%></td>
+									<td class="center"><%=resultBDB.getDeliveryMethodName()%></td>
+									<td class="center"><%=resultBDB.getTotalPrice()%>円</td>
 								</tr>
 							</tbody>
 						</table>
@@ -60,21 +60,19 @@
 								</tr>
 							</thead>
 							<tbody>
+								<%
+									for (ItemDataBeans buyIDB : buyIDBList) {
+								%>
 								<tr>
-									<td class="center">サンプル商品名1</td>
-									<td class="center">111111111円</td>
+									<td class="center"><%=buyIDB.getName()%></td>
+									<td class="center"><%=buyIDB.getPrice()%>円</td>
 								</tr>
+								<%
+									}
+								%>
 								<tr>
-									<td class="center">サンプル商品名2</td>
-									<td class="center">222222222円</td>
-								</tr>
-								<tr>
-									<td class="center">サンプル商品名3</td>
-									<td class="center">333333333円</td>
-								</tr>
-								<tr>
-									<td class="center">サンプル</td>
-									<td class="center">123456789円</td>
+									<td class="center"><%=resultBDB.getDeliveryMethodName()%></td>
+									<td class="center"><%=resultBDB.getDeliveryMethodPrice()%>円</td>
 								</tr>
 							</tbody>
 						</table>

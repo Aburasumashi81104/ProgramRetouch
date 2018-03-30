@@ -26,18 +26,11 @@ public class UserBuyHistoryDetail extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-
-		request.getRequestDispatcher(EcHelper.USER_BUY_HISTORY_DETAIL_PAGE).forward(request, response);
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 
 		try {
 
-			String buyIdstr = request.getParameter("id");
+			String buyIdstr = request.getParameter("buy_id");
 			int buyId = Integer.parseInt(buyIdstr);
 
 
@@ -56,7 +49,8 @@ public class UserBuyHistoryDetail extends HttpServlet {
 			session.setAttribute("errorMessage", e.toString());
 			response.sendRedirect("Error");
 		}
-	}
 
+
+	}
 
 }
