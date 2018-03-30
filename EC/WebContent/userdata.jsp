@@ -11,6 +11,7 @@
 <%
 	String validationMessage = (String) request.getAttribute("validationMessage");
 	UserDataBeans udb = (UserDataBeans)request.getAttribute("udb");
+	BuyDataBeans bdb = (BuyDataBeans)request.getAttribute("bdb");
 	ArrayList<BuyDataBeans> boughtBDBList = (ArrayList<BuyDataBeans>) request.getAttribute("boughtBDBList");
 %>
 </head>
@@ -93,7 +94,7 @@
 									<td class="center"><a href="UserBuyHistoryDetail?buy_id=1" class="btn-floating btn waves-effect waves-light "> <i class="material-icons">details</i></a></td>
 									<td class="center">1234年56月78日90時12分</td>
 									<td class="center">サンプル配送料金</td>
-									<td class="center"><123456789円円</td>
+									<td class="center">123456789円円</td>
 								</tr>
 
 							</tbody>

@@ -179,7 +179,7 @@ public class BuyDAO {
 				buyDataList.add(bdb);
 			}
 
-			System.out.println("searching BuyDataBeansList by BuyID has been completed");
+			System.out.println("searching BuyDataBeansList by UserID has been completed");
 			return buyDataList;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
