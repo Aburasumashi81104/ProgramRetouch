@@ -1,6 +1,7 @@
 package ec;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,11 +39,11 @@ public class UserData extends HttpServlet {
 			String validationMessage = (String) EcHelper.cutSessionAttribute(session, "validationMessage");
 
 			/* ====ユーザー情報表示用==== */
-			BuyDataBeans boughtBDB = BuyDAO.getBuyDataBeansByBuyId(userId);
-			request.setAttribute("boughtBDB", boughtBDB);
+			ArrayList<BuyDataBeans> boughtBDBList = BuyDAO.getBuyDataBeansListByUserId(userId);
+			request.setAttribute("boughtBDBList", boughtBDBList);
 
-//			ArrayList<BuyDataBeans> boughtBDBList = BuyDAO.getItemDataBeansListByBuyId(userId);
-//			request.setAttribute("buyIDBList", boughtBDBList);
+//			BuyDataBeans boughtBDB = BuyDAO.getBuyDataBeansByBuyId(userId);
+//			request.setAttribute("boughtBDB", boughtBDB);
 
 
 			//情報をセット
