@@ -31,18 +31,18 @@ public class UserBuyHistoryDetail extends HttpServlet {
 		try {
 
 			String buyIdstr = request.getParameter("buy_id");
-			int buyId = Integer.parseInt(buyIdstr);
 
+			//int buyId = Integer.parseInt(buyIdstr);
 
 			/* ====購入完了ページ表示用==== */
-			BuyDataBeans resultBDB = BuyDAO.getBuyDataBeansByBuyId(buyId);
+			BuyDataBeans resultBDB = BuyDAO.getBuyDataBeansByBuyId(buyIdstr);
 			request.setAttribute("resultBDB", resultBDB);
 
 			// 購入アイテム情報
-			ArrayList<ItemDataBeans> buyIDBList = BuyDetailDAO.getItemDataBeansListByBuyId(buyId);
+			ArrayList<ItemDataBeans> buyIDBList = BuyDetailDAO.getItemDataBeansListByBuyId(buyIdstr);
 			request.setAttribute("buyIDBList", buyIDBList);
 
-			// 購入詳細ページ
+			// 購入履歴ページへフォワード
 			request.getRequestDispatcher(EcHelper.USER_BUY_HISTORY_DETAIL_PAGE).forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

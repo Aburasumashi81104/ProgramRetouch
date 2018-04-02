@@ -42,8 +42,8 @@ public class UserData extends HttpServlet {
 			ArrayList<BuyDataBeans> boughtBDBList = BuyDAO.getBuyDataBeansListByUserId(userId);
 			request.setAttribute("boughtBDBList", boughtBDBList);
 
-//			BuyDataBeans boughtBDB = BuyDAO.getBuyDataBeansByBuyId(userId);
-//			request.setAttribute("boughtBDB", boughtBDB);
+//			BuyDataBeans bdb = BuyDAO.getBuyDataBeansByUserId(userId);
+//			request.setAttribute("bdb", bdb);
 
 
 			//情報をセット
